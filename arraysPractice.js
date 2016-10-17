@@ -104,11 +104,18 @@ function divider(numbersArray){
 var getRandomArbitrary = function() {
   return Math.floor(Math.random() * (30 - 0) + 0);
 };
-// var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
+var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 //Above you're given a function that will return a random number between 0 and 30.  There is also a commented out array full of numbers to help you visualize what your function will be receiving.
 
 // Your job is to write a function named finder that will get a random number (by invoking getRandomArbitrary), then loop through the array (that will be passed in as a parameter) to see if that random number is in the array. If it is, return true, if it's not, return false
-
+function finder(array){
+  for (var i = 0; i < array.length; i++) {
+  if (getRandomArbitrary() === array[i]){
+   return true;
+}
+}
+return false;
+}
   //Code Here
 
   //Code Here
@@ -120,7 +127,10 @@ var getRandomArbitrary = function() {
 
 var str = 'this is my sentence';
 //Write a function called reverse that takes a given str as it's only argument and returns that string after it's been reversed
-
+function reverse(str){
+  var rev = str.split("").reverse().join("");
+  return rev;
+}
   //Code Here
 
 
@@ -142,7 +152,28 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
   In both the removeItem function and the addItem function, you will also need to check for valid aurguments. Specrunner will try to call your functions without passing in valid aurguments. When this happens, you will need to respond by returning an empty array.
 */
-
+function removeItem(myGroceryList, rem){
+var none = [];
+  if (myGroceryList){
+  for (var i = 0; i < myGroceryList.length; i++) {
+  if (rem === myGroceryList[i]){
+    myGroceryList.splice(i, 1);
+    return myGroceryList;
+  } else {
+    return myGroceryList;
+  }
+}
+}
+else{ return none;}
+}
+function addItem(myGroceryList, item){
+var none = [];
+  if (myGroceryList){
+  myGroceryList.push(item);
+  return myGroceryList;
+}
+else return none;
+}
   //Code Here
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
@@ -153,7 +184,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //Next Problem
 
 
-
+function maker(){
+var long = [];
+  for (var i = 1; i <= 215; i++) {
+    long.push(i);
+  }
+return long;
+}
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
   //Code Here
